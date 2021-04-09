@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Olá Mundo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="shortcut icon" href="img/dolespic.ico" />
+    </head>
+    <body>
+<header class="header">
+    <a href=index.html><img class="logo1" src="img/dolespic.png"></a>
+    <ul class="menu">
+        <a href="index.html"><li>Home</li></a>
+        <a href="binario.html"><li style="color:gray">Binário</li></a>
+        <a href="borda.html"><li>Borda</li></a>
+    </ul>
+</header>
+<div class="normal" style="padding: 128px 0px">
+<div class="conver">
+<text id="resultado">Seu Resultado é...</text>
+<br>
+<input type="text" id="entra1" name="Entrada" maxlength="8" onkeypress="return event.charCode == 48 || event.charCode == 49" class="entra">
+<br>
+<button id="calcu" onClick="Calcular()">Calcular</button>
+</div>
+</div>
+
+    <footer>
+        <address>Flavio Midea</address>
+    </footer>
+    </body>
+    <script src="myscript.js"></script>
+</html>

@@ -1,0 +1,111 @@
+html{
+    height: auto;
+    background-image: linear-gradient(#dcf5e3, #b8cfbe);    
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: Arial;
+}
+
+.flavio{
+    color:blue;
+    border-radius: 2cm;
+    font-size: 24px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 10px;
+
+}
+.flavio:hover{
+    background-color: brown;
+    border-radius: 2cm;
+    font-size: 24px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+.normal{
+    margin-left: 10%;
+
+}
+.menu{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 10%;
+    font-family: Arial Black;
+    font-size:x-large;
+}
+
+.menu li{
+    margin: 8px;
+    float: left;
+    text-decoration: none;
+    color:black;
+}
+
+.menu li:hover{
+    margin: 8px;
+    float: left;
+    color: gray;
+}
+
+.header{
+    background-color: #e3fcea;
+	margin: -8px
+
+}
+
+.logo1 {
+    width: 128px;
+    margin-left: 10%;
+    margin-top: 8px;
+}
+
+footer{
+    background-color: #e3fcea;
+    padding: 32px;
+    position:absolute;
+    left:0;
+    right: 0;
+
+}
+
+.conver{
+    padding: 20px;
+    max-width: 300px;
+    background-color: aquamarine;
+    border-radius: 2px;
+    box-shadow: 6px 5px 10px black;
+}
+
+#calcu, #gerar, #copy{
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.entra{
+    margin-bottom: 3px;
+    max-width: 64px;
+    text-align: center;
+}
+
+#resultado{
+    font-size: 32px;
+}
+
+.cover2{
+    padding: 32px;
+    background-color:cornflowerblue;
+    max-width: 512px;
+    border-radius: 8px;
+    height: 256px;
+}
+
+#caixa{
+    padding: 8%;
+    margin: 5%;
+}
+
+#copiador{
+    opacity: 0;
+}
