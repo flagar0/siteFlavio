@@ -14,19 +14,17 @@
     <a href=index.html><img class="logo1" src="img/dolespic.png"></a>
     <ul class="menu">
         <a href="index.html"><li>Home</li></a>
-        <a href="binario.html"><li style="color:gray">Binário</li></a>
+        <a href="binario.html"><li>Binário</li></a>
         <a href="borda.html"><li>Borda</li></a>
-        <a href="cores.html"><li>ColorCycle</li></a>
+        <a href="cores.html"><li style="color:gray">ColorCycle</li></a>
     </ul>
 </header>
 <div class="normal" style="padding: 128px 0px">
-<div class="conver">
-<text id="resultado">Seu Resultado é...</text>
-<br>
-<input type="text" id="entra1" name="Entrada" maxlength="8" onkeypress="return event.charCode == 48 || event.charCode == 49" class="entra">
-<br>
-<button id="calcu" onClick="Calcular()">Calcular</button>
-</div>
+    <div class="covercycle" id="cycler" style="background-color:#8a2be2;">
+            <button id="start" onclick="Rodar =setInterval(mudarCor,250)">Start</button>
+            <button id="start" onclick="clearTimeout(Rodar)">Stop</button>
+        </div>
+    </div>
 </div>
 
     <footer>
