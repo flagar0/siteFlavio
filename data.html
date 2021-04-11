@@ -8,32 +8,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="styles.css">
         <link rel="shortcut icon" href="img/dolespic.ico" />
+        <script src="myscript.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
     </head>
-    <body>
+    <body onload="verCookie()">
 <header class="header">
     <a href=index.html><img class="logo1" src="img/dolespic.png"></a>
     <ul class="menu">
         <a href="index.html"><li>Home</li></a>
         <a href="binario.html"><li>Binário</li></a>
-        <a href="borda.html"><li style="color:gray">Borda</li></a>
+        <a href="borda.html"><li>Borda</li></a>
         <a href="cores.html"><li>ColorCycle</li></a>
-        <a href="data.html"><li>CountDown</li></a>
+        <a href="data.html"><li style="color:gray">CountDown</li></a>
     </ul>
 </header>
 <div class="normal" style="padding: 128px 0px">
-    <div class="cover2">
-        Superior-Esquerdo: <input type="number" id="supEsq" class="entra">
+    <div class="covercycle" id="cycler" style="background-color:#00ff40;">
+        <p>Data: <input type="text" id="calendario" style="max-width: 67px"/></p>
+        <button id="btnContar" onclick="Contar()">Contar</button>
         <br>
-        Superior-Direito: <input type="number" id="supDir" class="entra">
-        <br>
-        Inferior-Esquerdo: <input type="number" id="infEsq" class="entra">
-        <br>
-        Inferior-Direito: <input type="number" id="infDir" class="entra">
-        <br>
-        <button type="button" id="gerar" onclick="Mudar()">Gerar</button>
-        <button type="button" id="copy" onclick="Copiar()">Copiar</button>
-        <div id="caixa">
-            
+        <p id="contador">Hora</p>
         </div>
     </div>
 </div>
@@ -42,5 +38,9 @@
         <address>Flavio Midea</address>
     </footer>
     </body>
-    <script src="myscript.js"></script>
+    <script>
+        $(function() {
+            $( "#calendario" ).datepicker({dateFormat: 'dd/mm/yy'});
+        });
+        </script>
 </html>

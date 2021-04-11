@@ -99,5 +99,31 @@ function rgb2hex(rgb) {
 }
 function hex(x) {
     return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
-   }
+}
 
+function Contar(){
+    funContar(document.getElementById('calendario').value);
+}
+
+function verCookie(){
+    if(document.cookie != null){
+        document.getElementById('contador').innerHTML = document.cookie;
+    }
+}
+
+function funContar(dataEsp){
+    var dato = new Date()
+    var inicio = new Date(dato.getFullYear(), dato.getMonth(), dato.getDate()); //Dia de Hoje
+
+    var dataCalc = new Date(dataEsp.substring(6,10), parseInt(dataEsp.substring(4,5)-1), dataEsp.substring(0,2));
+    dataCalc.setMonth(parseInt(dataEsp.substring(4,5)-1));
+
+    var timeDiff = dataCalc.getTime() - inicio.getTime();   
+    if (timeDiff <0){
+        alert("Digite um Valor Válido.");
+    }else{
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+        document.getElementById('contador').innerHTML = diffDays;
+        document.cookie = diffDays;
+    }
+}

@@ -132,3 +132,21 @@ footer{
     border-radius: 8px;
     height: 256px;
 }
+
+#btnContar{
+    border-radius: 0;
+    padding: 8px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    transition-duration:50ms ;
+    border: 1px;
+}
+
+#btnContar:hover{
+    background-color:teal;
+}
+
+#contador{
+    font-size:64px;
+}
