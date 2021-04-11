@@ -26,10 +26,25 @@
 </header>
 <div class="normal" style="padding: 128px 0px">
     <div class="covercycle" id="cycler" style="background-color:#00ff40;">
-        <p>Data: <input type="text" id="calendario" style="max-width: 67px"/></p>
+        <p>Data: <input type="text" id="calendario" style="max-width: 67px"/>  Hora: <input type="time" id="appt" name="appt" min="00:00" max="23:59" required></p>
+        
+
         <button id="btnContar" onclick="Contar()">Contar</button>
         <br>
-        <p id="contador">Hora</p>
+        <div class="cronos">
+            <p id="contDia">0</p>
+            <p>Dias</p>
+        </div><div class="cronos">
+            <p id="contHora">0</p>
+            <p>Horas</p>
+        </div><div class="cronos">
+            <p id="contMin">0</p>
+            <p>Minutos</p>
+        </div><div class="cronos">
+            <p id="contSeg">0</p>
+            <p>Segundos</p>
+        </div>
+        
         </div>
     </div>
 </div>

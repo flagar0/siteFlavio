@@ -147,6 +147,24 @@ footer{
     background-color:teal;
 }
 
-#contador{
-    font-size:64px;
+#contDia,#contHora,#contMin,#contSeg{
+    font-size: xx-large;
+}
+
+#calendario,#appt{
+    display:inline-block;
+    cursor: pointer;
+}
+
+.cronos{
+    border: 1px solid;
+    border-radius: 20px;
+    padding-right: 0px;
+    margin-top: 10%;
+    width: 85px;
+    max-height: 85px;
+    line-height: 5px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 12px;
 }

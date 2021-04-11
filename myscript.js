@@ -102,28 +102,69 @@ function hex(x) {
 }
 
 function Contar(){
-    funContar(document.getElementById('calendario').value);
+    if (timer3 == true){
+        clearTimeout(timer1);
+    }
+    funContar(document.getElementById('calendario').value,document.getElementById('appt').value);
 }
 
 function verCookie(){
-    if(document.cookie != null){
-        document.getElementById('contador').innerHTML = document.cookie;
+    if(document.cookie != ""){
+        var h = document.cookie
+        var l1 = h.indexOf('data=');
+        var taml1  = h.indexOf(';');
+        var l2 = h.indexOf('hora=');
+        var taman = h.length;
+        
+        var valorfinal = h.substring((l1+5),taml1);
+        var horafinal = h.substring((l2+5),taman)
+        document.getElementById('calendario').value = valorfinal;
+        document.getElementById('appt').value = horafinal;
+
+        funContar(valorfinal,horafinal);
     }
 }
 
-function funContar(dataEsp){
+function funContar(dataEsp, horaEsp){
     var dato = new Date()
-    var inicio = new Date(dato.getFullYear(), dato.getMonth(), dato.getDate()); //Dia de Hoje
+    var inicio = new Date(dato.getFullYear(), dato.getMonth(), dato.getDate(), dato.getHours(), dato.getMinutes(), dato.getSeconds()); //Dia de Hoje
+    var min =0;
+    var hor =0;
 
-    var dataCalc = new Date(dataEsp.substring(6,10), parseInt(dataEsp.substring(4,5)-1), dataEsp.substring(0,2));
-    dataCalc.setMonth(parseInt(dataEsp.substring(4,5)-1));
 
-    var timeDiff = dataCalc.getTime() - inicio.getTime();   
+    if (horaEsp != "" || horaEsp !=  null){
+        hor = horaEsp.substring(0,2);
+        min = horaEsp.substring(3,5);
+    }
+
+    var dataCalc = new Date(dataEsp.substring(6,10), parseInt(dataEsp.substring(4,5)-1), dataEsp.substring(0,2), hor,min,0);
+
+    timeDiff = dataCalc.getTime() - inicio.getTime();   
     if (timeDiff <0){
         alert("Digite um Valor Válido.");
     }else{
-        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-        document.getElementById('contador').innerHTML = diffDays;
-        document.cookie = diffDays;
+        
+        timeRegre = timeDiff;
+        document.cookie = "data="+dataEsp;
+        document.cookie = "hora="+horaEsp;
+        Regresar();
     }
+}
+
+var timeRegre;
+var timer3 = false;
+function Regresar(){
+        timeRegre = timeRegre-1000;
+        timer3= true;
+
+        var diffDays = Math.floor(timeRegre / (1000 * 3600 * 24)); 
+        var diffHora = Math.floor((timeRegre % (1000 * 3600 * 24)) / (1000 * 60 * 60)) ; 
+        var diffMin = Math.floor(((timeRegre % (1000 * 3600 * 24)) % (1000 * 60 * 60)) / (1000 * 60));
+        var diffSeg = Math.floor(((timeRegre % (1000 * 3600 * 24)) % (1000 * 60 * 60)) % (1000 * 60) / (1000)); 
+        document.getElementById('contDia').innerHTML = diffDays;
+        document.getElementById('contHora').innerHTML = diffHora;
+        document.getElementById('contMin').innerHTML = diffMin;
+        document.getElementById('contSeg').innerHTML =diffSeg;
+
+        timer1 = setTimeout(Regresar,1060);
 }
