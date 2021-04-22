@@ -1,4 +1,5 @@
 var resultado;
+var comprove = false;
 
 function Calcular(){
     var binario = document.getElementById('entra1').value;
