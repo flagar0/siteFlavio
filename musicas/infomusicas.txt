@@ -1,0 +1,5 @@
+mus1.mp3|Love On Top|Beyonce|4|mus1.bin
+mus2.mp3|Irreplaceable|Beyonce|B'Day Deluxe Edition|mus2.bin
+mus3.mp3|Crazy In Love (feat. JAY-Z)|Beyonce, JAY-Z|Dangerously In Love|mus3.bin
+mus4.mp3|If I Were a Boy|Beyonce|I AM...SASHA FIERCE|mus4.bin
+mus5.mp3|Telephone|Lady Gaga, Beyonce|The Fame Monster (Deluxe Edition)|mus5.bin
